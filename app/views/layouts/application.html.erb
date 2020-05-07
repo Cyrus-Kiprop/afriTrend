@@ -4,12 +4,12 @@
     <title>AfriTrend</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-<%= javascript_include_tag :application, "https://kit.fontawesome.com/4067e9fc98.js" %>
+    <%= javascript_include_tag :application, "https://kit.fontawesome.com/4067e9fc98.js" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <%= render 'application/header' %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>

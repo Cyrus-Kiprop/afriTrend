@@ -1,0 +1,158 @@
+@import "../base/mixin.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 10px #ccc;
+  @include phone {
+    height: 60px;
+  }
+  @include tab-lg {
+    height: 70px;
+  }
+  @include pc {
+    height: 70px;
+  }
+  &__logo {
+    display: inline-block;
+    height: auto;
+    text-decoration: none;
+    color: #000;
+    @include phone {
+      margin-left: 16px;
+      font-size: 18px;
+      letter-phoneacing: 0.07em;
+    }
+    @include tab-lg {
+      margin-left: 16px;
+      font-size: 24px;
+      letter-phoneacing: 0.05em;
+    }
+    @include pc {
+      margin-left: 24px;
+      font-size: 26px;
+      letter-phoneacing: 0.05em;
+    }
+    @include wide-screen {
+      margin-left: 32px;
+    }
+  }
+  &__nav-wrap {
+    height: 100%;
+    width: max-content;
+    margin-left: auto;
+    @include hamburger {
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: none;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      height: 100%;
+    }
+    @include pc {
+      display: inline-block;
+      margin-right: 16px;
+    }
+    &.open {
+      display: block;
+    }
+  }
+  &__nav-list {
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    @include hamburger {
+      height: 100%;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 30vh;
+    }
+    @include pc {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__nav-item {
+    width: max-content;
+    @include phone {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    @include tab-lg {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    @include pc {
+      display: inline-block;
+      margin-right: 24px;
+    }
+    @include wide-screen {
+      // margin-right: 40px;
+    }
+  }
+  &__nav-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    color: #1a1c1a;
+    @include hamburger {
+      font-size: 21px;
+      color: #fff;
+    }
+    @include pc {
+      font-size: 14px;
+    }
+    @include wide-screen {
+      font-size: 18px;
+    }
+    &::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 2px;
+      transform: scale(0, 1);
+      transform-origin: center top;
+      transition-duration: 0.25s;
+      @include hamburger {
+        background-color: #fff;
+      }
+      @include pc {
+        background-color: #1a1c1a;
+      }
+    }
+    &:hover::after {
+      transform: scale(1, 1);
+    }
+  }
+
+  &__user-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 5px;
+  }
+  &__user-item {
+    margin: 0 3px;
+    text-transform: uppercase;
+    font-size: 16px;
+    a {
+      color: grey;
+      font-size: 11px;
+      text-decoration: none;
+    }
+  }
+}
