@@ -1,36 +1,65 @@
-<h1>Articles</h1>
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.user.first_name + ' ' + article.user.last_name %></td>
-        <td><%=image_tag article.image %></td>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= "#{article.votes.count}votes" %></td>
-        <%if user_signed_in? %>
-          <td>
-            <%= upvote_or_downvote_btn(article) %>
-          </td>
-          <td><%= article.categories.first.name if article.categories.exists? %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<section class=" container-fluid m-0 p-0">
+  <div class="row featured m-0 p-0">
+    <div class="col-12 p-0">
+      <div class=" featured__item-img " style="background-image: url(<%= rails_blob_path(@top_article.image) %>);">
+        <%= link_to articles_path(@top_article.id), class: 'featured__gradient' do %>
+          <span class="featured__article-title"><%= @top_article.title %></span>
+          <p class="featured__article-content"><%= @top_article.content%></p>
         <%end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  </div>
+</section>
 
-<br>
+<section class="content">
+  <% @articles.each do |article| %>
 
+    <div class="card content__item" >
+      <div class=" content__item-img small-shadow " style="background-image: url(<%= rails_blob_path(article.image) %>);">
+
+        <%= link_to article_path(article.id), class: 'content__item-gradient' do%>
+          <div>
+
+            <span class="content__item-title  " style=" border-bottom:4px solid <%= category_name_border_color(article.categories.first.name)%>"><%=article.categories.first.name  %></span>
+          </div>
+          <p class="content__item-description"><%= article.title%></p>
+      <% end %>
+      </div>
+    </div>
+
+  <% end %>
+</section>
+
+<%# <h1>Articles</h1> %>
+<%# <table> %>
+  <%# <thead> %>
+    <%# <tr> %>
+      <%# <th>User</th> %>
+      <%# <th>Title</th> %>
+      <%# <th>Content</th> %>
+      <%# <th colspan="3"></th> %>
+      <%# </tr> %>
+    <%# </thead> %>
+  <%# <tbody> %>
+    <%# <% @articles.each do |article| %> %>
+      <%# <tr> %>
+        <%# <td><%= article.user.first_name + ' ' + article.user.last_name %></td> %>
+        <%# <td><%=image_tag article.image %></td> %>
+        <%# <td><%= article.title %></td> %>
+        <%# <td><%= article.content %></td> %>
+        <%# <td><%= "#{article.votes.count}votes" %></td> %>
+        <%# <%if user_signed_in? %> %>
+          <%# <td> %>
+            <%# <%= upvote_or_downvote_btn(article) %> %>
+            <%# </td> %>
+          <%# <td><%= article.categories.first.name if article.categories.exists? %></td> %>
+          <%# <td><%= link_to 'Show', article %></td> %>
+          <%# <td><%= link_to 'Edit', edit_article_path(article) %></td> %>
+          <%# <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td> %>
+          <%# <%end%> %>
+        <%# </tr> %>
+      <%# <% end %> %>
+    <%# </tbody> %>
+  <%# </table> %>
+<%# <br> %>
 <%= link_to 'New Article', new_article_path %>

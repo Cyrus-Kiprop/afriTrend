@@ -1,3 +1,129 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import '../base/mixin';
+
+.featured {
+  background: #101010;
+  height: 80vh;
+  width: 100%;
+  &__item-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    transition: width 1s;
+    &:hover{
+      box-shadow: 0px 4px 39px 2px rgba(20,20,20,1);
+      width: 97%;
+      margin: 0 auto;
+    }
+  }
+
+  &__gradient {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include fs;
+    text-decoration: none !important;
+
+    opacity: 0.5;
+    padding: 20px 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(150,150,150,1) 30%, rgba(138,138,138,1) 100%, rgba(0,0,0,1) 100%);
+    // background-image: linear-gradient(
+    // to right,
+
+    // hsl(344, 100%, 50%),
+    // hsl(31, 100%, 40%)
+
+    // );
+    transition: background-image 0.5s linear;
+
+  }
+
+  &__article-title {
+    font-size: 100px;
+    font-weight:900;
+    line-height: 112px;
+    font-family: 'Montserrat', sans-serif;
+    color: #f81f01;
+  }
+  &__article-content {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.content {
+  @include wide-screen {
+    @include grid(repeat(5, 1fr), 270px);
+  }
+  @include pc {
+    @include grid(repeat(4, 1fr), 270px);
+  }
+  @include tab-lg {
+    @include grid(repeat(3, 1fr), 270px);
+  }
+  @include tab-sm {
+    @include grid(repeat(2, 1fr), 200px);
+  }
+  @include phone {
+    @include grid( 1fr, 180px);
+  }
+
+  &__item {
+    border: 0 !important;
+    transition:transform 1s;
+
+    &:hover{
+      transform: scale(1.1);
+      z-index: 5;
+      border-radius: 4px;
+    }
+
+
+    &-img {
+      @include fs;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:hover {
+        border-radius: 4px;
+      }
+
+    }
+    &-gradient {
+      @include fs;
+      color: white !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      text-decoration: none !important;
+    }
+
+    &-title {
+      font-size: 18px;
+      width: auto;
+      display:inline-block;
+      text-decoration:none;
+      font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+    }
+
+    &-description {
+      font-size:16px;
+      font-weight: 500;
+font-family: 'Balsamiq Sans', cursive;
+&:hover {
+  text-decoration: underline;
+color: #ED5E2C;
+}
+    }
+
+
+
+}}
