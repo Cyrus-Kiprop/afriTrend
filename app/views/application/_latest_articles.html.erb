@@ -1,8 +1,8 @@
 <section class="section-wrapper">
   <h2 class="section-header">Latest Articles</h2>
   <div class="latest-articles">
-    <% data.uniq.each do |article|%>
-      <%= link_to articles_path(article), class: "latest-articles__item" do %>
+    <% data[0..9].uniq.each do |article|%>
+      <%= link_to article_path(article), class: "latest-articles__item" do %>
         <%unless article.categories.empty?%>
           <div class="latest-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
             <div class="latest-articles__content">

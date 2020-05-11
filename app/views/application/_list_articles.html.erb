@@ -42,37 +42,5 @@
     <%end%>
 
   </section>
-
-  <section class="section-wrapper">
-    <h2 class="more-articles__header">More from this topic</h2>
-    <div class="more-articles">
-    <% if  (articles[9..-1].nil?) %>
-           <h2 style="font-weight: 1000; font-size: 60px;">No Result at the moment!</h2>
-         <%else%>
-           <% articles[9..-1].uniq.each do |article|%>
-<div class="more-articles__item">
-
-    <div class="more-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
-  </div>
-  <div class="more-articles__content">
-    <%= map_links(article.categories.first.name) unless article.categories.empty? %>
-  <h3 class="more-articles__title"><%= article.title%></h3>
-  <p><%= split_article_content(article.content)%></p>
-
-    <div class="more-articles__user-duration">
-    <span><%=link_to  article.user.first_name + ' ' + article.user.last_name, user_path(article.user) %></span>
-    <span><%= duration(article.content)%> min read </span>
-    </div>
-
-
-  </div>
-</div>
-    <%end%>
-    <%end%>
-    </div>
-
-  </section>
+  <%= render 'application/more_articles', articles: articles %>
 </main>
-<footer>
-  <p>&copy; 2019. Made with ❤ and CSS Grid.</p>
-</footer>

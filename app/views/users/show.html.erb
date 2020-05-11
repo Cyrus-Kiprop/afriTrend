@@ -1,0 +1,47 @@
+<main class="user-wrapper">
+  <aside>
+    <div class="user-details shadow">
+      <div class="user-details__gravatar shadow ">
+      </div>
+      <div class="user-details__info">
+        <span class="user-details__name"><%= @user.first_name + ' ' + @user.last_name %></span>
+        <span>
+          <%= link_to user_registration_path, class: 'user-details__edit-user' do%>
+            <i class="fas fa-cogs"></i> Edit
+          <%end%>
+        </span>
+      </div>
+    </div>
+
+  </aside>
+
+  <section>
+
+    <div class="user-articles">
+      <% if @user.articles.empty? %>
+        <h1>You haven't written any articles lately</h1>
+      <%else%>
+        <% @user.articles.each do |article| %>
+          <div class="user-articles-item">
+
+            <div class="user-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
+            </div>
+            <div class="description">
+              <h3><%= article.title%></h3>
+              <p><%= split_article_content(article.content) %></p>
+              <%=link_to 'Read me', articles_path(article), class: 'btn btn-success'%>
+              <div class="article-show-wrapper-edit-delete">
+                <% if user_signed_in?%>
+                <%= link_to 'Edit', edit_article_path(article) %> |
+                <%= link_to 'Delete', article_path(article), method: :delete %> |
+              <%end%>
+                <%= link_to 'Back', articles_path %>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+
+  </section>
+</main>

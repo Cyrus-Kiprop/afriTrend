@@ -32,5 +32,4 @@
 </section>
 
 <%= render 'application/latest_articles', data: @articles %>
-
-<%= link_to 'New Article', new_article_path %>
+<%= render 'application/more_articles', articles: @articles %>
