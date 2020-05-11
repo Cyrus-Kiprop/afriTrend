@@ -17,6 +17,9 @@
   @include pc {
     height: 70px;
   }
+  @include wide-screen {
+    height: 70px;
+  }
   &__logo {
     display: inline-block;
     height: auto;
@@ -25,7 +28,7 @@
     @include phone {
       margin-left: 16px;
       font-size: 18px;
-      letter-phoneacing: 0.07em;
+      letter-spacing: 0.07em;
     }
     @include tab-lg {
       margin-left: 16px;
@@ -64,6 +67,8 @@
     }
   }
   &__nav-list {
+      display: flex;
+      align-items: center;
     list-style: none;
     height: 100%;
     margin: 0;
@@ -99,13 +104,13 @@
       margin-right: 24px;
     }
     @include wide-screen {
-      // margin-right: 40px;
+      margin-right: 40px;
     }
   }
   &__nav-link {
     position: relative;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
     letter-spacing: 0.15em;
     color: #1a1c1a;
     @include hamburger {
@@ -135,6 +140,9 @@
         background-color: #1a1c1a;
       }
     }
+    &:hover{
+      color: #9F9723 !important;
+    }
     &:hover::after {
       transform: scale(1, 1);
     }
@@ -146,8 +154,10 @@
     margin: 0 10px 0 5px;
   }
   &__user-item {
+    font-size: 11px !important;
     margin: 0 3px;
     text-transform: uppercase;
+    color: grey;
     font-size: 16px;
     a {
       color: grey;

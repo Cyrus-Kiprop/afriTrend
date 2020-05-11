@@ -1,19 +1,38 @@
 <p id="notice"><%= notice %></p>
+<section class="article-show-wrapper">
+  <div class="article-show-wrapper__article-owner">
+    <div class="article-show-wrapper-edit-delete">
+      <%if @article.user == current_user%>
+      <%= link_to 'Edit', edit_article_path(@article) %> |
+      <%= link_to 'Delete', articles_path(@article), method: :delete %> |
+    <%end%>
+      <%= link_to 'Back', articles_path %>
+    </div>
+    <span>Article by:<%= @article.user.first_name + ' ' + @article.user.last_name%></span>
+</div>
+
+
+
+<div class="article-show-wrapper__article-title">
+  <h1>
+    <%= @article.title %>
+  </h1>
+
+</div>
+
+<div class="article-show-wrapper__content">
 
 <p>
-  <strong>User:</strong>
-  <%= @article.user %>
+  <%= split_article_content(@article.content) %>
 </p>
+
+<div class="article-show-wrapper__article-img">
+  <%= image_tag rails_blob_path(@article.image), alt: 'Article caption'%>
+</div>
 
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <%= @article.content%>
 </p>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</section>

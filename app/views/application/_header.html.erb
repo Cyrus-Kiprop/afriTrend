@@ -2,24 +2,26 @@
   <a class="header__logo" href="#">AfriTrend</a>
   <nav class="header__nav-wrap">
     <ul class="header__nav-list">
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Home</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Fashion</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Business</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Sports</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Entertainment</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">Magazine</a></li>
-      <li class="header__nav-item"><a class="header__nav-link" href="#">AfroTV</a></li>
+      <li class="header__nav-item">
+        <%= link_to 'Home', articles_path, class: 'header__nav-link'  %>
+      </li>
+          <% links.each do |link| %>
+            <li class="header__nav-item">
+              <%= link %>
+              </li>
+          <%end%>
     </ul>
   </nav>
   <div class="header__user-wrap">
     <% if user_signed_in? %>
       <span class="header__user-item"><%= current_user.first_name + ' ' + current_user.last_name %></span>
+      <span class="header__user-item">|</span>
       <span class="header__user-item"> <%= link_to 'sign-out', destroy_user_session_path, method: :delete  %></span>
     <% else %>
       <span class="header__user-item"><%= link_to 'Login', new_user_session_path, class: 'user__item_log-out' %></span>
       <span class="header__user-item">|</span>
       <span class="header__user-item"><%= link_to 'Register', new_user_registration_path, class: 'user__item_sign-up' %><hspan>
-          <span class="header__user-item"><%= link_to '<i class="fas fa-search"></i>'.html_safe, new_user_registration_path, class: 'user__item_sign-up' %><hspan>
-            <% end %>
-          </div>
-        </header>
+        <span class="header__user-item"><%= link_to '<i class="fas fa-search"></i>'.html_safe, new_user_registration_path, class: 'user__item_sign-up' %><hspan>
+        <% end %>
+  </div>
+</header>
