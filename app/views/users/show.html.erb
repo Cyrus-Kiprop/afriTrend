@@ -6,7 +6,7 @@
       <div class="user-details__info">
         <span class="user-details__name"><%= @user.first_name + ' ' + @user.last_name %></span>
         <span>
-          <%= link_to user_registration_path, class: 'user-details__edit-user' do%>
+          <%= link_to edit_user_registration_path, class: 'user-details__edit-user' do%>
             <i class="fas fa-cogs"></i> Edit
           <%end%>
         </span>
