@@ -23,6 +23,22 @@ module ApplicationHelper
     result
   end
 
+  def map_links(category)
+    if category == 'Fashion'
+       link_to(category, article_categories_path(category), class: 'more-articles__category')
+    elsif category == 'Magazine'
+       link_to(category, article_categories_path(category), class: 'more-articles__category')
+    elsif category == 'Sports'
+       link_to(category, article_categories_path(category), class: 'more-articles__category')
+    elsif category == 'Business'
+       link_to(category, article_categories_path(category), class: 'more-articles__category')
+    elsif category == 'Entertainment'
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
+    elsif category == 'News'
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
+    end
+  end
+
   def upvote_or_downvote_btn(article)
     vote = Vote.find_by(article: article, user: current_user)
     if vote
@@ -34,6 +50,10 @@ module ApplicationHelper
 
   def split_article_content(content)
     content.slice!(0..content.index('.'))
+  end
+
+  def duration(content)
+    (content.size.to_i / 300).floor
   end
 
   def category_name_border_color(name)
