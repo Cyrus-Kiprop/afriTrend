@@ -80,6 +80,9 @@
   }
 
   &-head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     h1 {
       font-size: 16px;
       font-family: 'Montserrat', sans-serif;

@@ -8,6 +8,7 @@
             <div class="latest-articles__content">
               <div class="category__item-head">
                 <h1 style='border-bottom: 4px solid  <%= category_name_border_color(article.categories.first.name)%>'><%= article.categories.first.name %></h1>
+                <span class="latest-articles__votes ml-auto"><%= article.votes.count%> votes</span>
               </div>
               <h2 class="latest-articles__title"> <%=article.title%></h2>
             </div>

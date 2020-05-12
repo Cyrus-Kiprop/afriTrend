@@ -29,7 +29,7 @@
             <div class="description">
               <h3><%= article.title%></h3>
               <p><%= split_article_content(article.content) %></p>
-              <%=link_to 'Read me', articles_path(article), class: 'btn btn-success'%>
+              <%=link_to 'Read more', article_path(article), class: 'btn btn-success'%>
               <div class="article-show-wrapper-edit-delete">
                 <% if user_signed_in?%>
                 <%= link_to 'Edit', edit_article_path(article) %> |
