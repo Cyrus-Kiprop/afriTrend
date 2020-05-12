@@ -160,8 +160,12 @@
     height: 400px;
     padding-bottom: 10px;
 
-    img {
-      @include fs;
-    }
+  }
+
+  &__img {
+    @include fs;
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
 }
