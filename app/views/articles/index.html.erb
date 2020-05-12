@@ -1,4 +1,6 @@
 <section class=" container-fluid m-0 p-0">
+
+  <%if @top_article %>
   <div class="row featured m-0 p-0">
     <div class="col-12 p-0">
       <div class=" featured__item-img " style="background-image: url(<%= rails_blob_path(@top_article.image) %>);">
@@ -9,6 +11,7 @@
       </div>
     </div>
   </div>
+<% end %>
 </section>
 
 <section class="content">
