@@ -1,7 +1,8 @@
 module ApplicationHelper
   def article_categories
-    categories = Category.all.map { |category| category.name }
+    Category.all.map(&:name)
   end
+  # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
   def links
     result = []
@@ -25,13 +26,13 @@ module ApplicationHelper
 
   def map_links(category)
     if category == 'Fashion'
-       link_to(category, article_categories_path(category), class: 'more-articles__category')
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
     elsif category == 'Magazine'
-       link_to(category, article_categories_path(category), class: 'more-articles__category')
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
     elsif category == 'Sports'
-       link_to(category, article_categories_path(category), class: 'more-articles__category')
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
     elsif category == 'Business'
-       link_to(category, article_categories_path(category), class: 'more-articles__category')
+      link_to(category, article_categories_path(category), class: 'more-articles__category')
     elsif category == 'Entertainment'
       link_to(category, article_categories_path(category), class: 'more-articles__category')
     elsif category == 'News'
@@ -71,4 +72,5 @@ module ApplicationHelper
       'white'
     end
   end
+  # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 end

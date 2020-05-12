@@ -7,9 +7,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require "capybara/rspec"
 
-
 Capybara.register_driver :selenium_chrome do |app|
- Capybara::Selenium::Driver.new(app, browser: :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 

@@ -9,7 +9,7 @@ class VotesController < ApplicationController
     else
       flash[:error] = 'Internal server error'
     end
-    end
+  end
 
   def destroy
     vote = Vote.find_by_id(vote_params)
@@ -21,9 +21,9 @@ class VotesController < ApplicationController
     end
   end
 
-    private
+  private
 
   def vote_params
     params.require(:id)
   end
-  end
+end
