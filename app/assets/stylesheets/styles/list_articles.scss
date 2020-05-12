@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
+@import '../base/mixin.scss';
+
+
+/* Styles for the hero image */
+.hero {
+  /* Photo by mnm.all on Unsplash */
+  background-size: cover;
+  background-repeat:no-repeat;
+  padding-bottom: 2rem;
+  background-position: center;
+  /* grid styles */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: 270px;
+  align-items: center;
+
+
+}
+
+.hero > * {
+  color: white;
+}
+
+.hero > h1 {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+.hero > article > p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.hero > article > a {
+  padding: 1rem;
+  margin-top: .75rem;
+}
+
+
+.category-wrapper {
+  @include grid(1, 300px);
+
+  @include wide-screen {
+    @include grid(repeat(3,1fr), 250px);
+    row-gap: 5px;
+  }
+  @include pc {
+    @include grid(repeat(2,1fr), 300px);
+  }
+  @include tab-lg{
+    @include grid(repeat(2,1fr), 300px);
+  }
+
+
+}
+
+.category__item {
+  @include grid(repeat(2, 1fr), 100%);
+  text-decoration: none !important;
+  color: inherit;
+  &:hover {
+
+  }
+
+  &-content{
+    @include flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-start;
+    &:hover {
+      // color:
+    }
+  }
+  &-title {
+    font-size: 18px;
+    font-family: 'Balsamiq',sans-serif;
+    font-weight: 600;
+
+  }
+
+  &-head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    h1 {
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      display: inline-block;
+    }
+  }
+
+  &-read-more {
+    color:  #DF9281;
+    text-decoration: none;
+    &:hover {
+      color:  #DF9281;
+
+    }
+  }
+  &-desc {
+    font-family: 'Bitter', serif;
+    text-align: justify;
+    overflow: hidden
+  }
+}
+
+
+.more-articles__header {
+
+  color: #EC422A;
+  font-family: 'Balsamiq',sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'Balsamiq',sans-serif;
+  line-height: 3rem;
+}
+
+.more-articles {
+  @include grid(1fr, 300px);
+
+  &__item {
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+    border-top: 1px solid gray;
+    padding-top: 5px;
+  }
+  &__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width:30%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    position: relative;
+
+  }
+  &__category {
+    font-size: 16px;
+    color: blue;
+    font-family: 'Montserrat', sans-serif;
+  }
+  &__title {
+    font-weight:800;
+    font-size:19px;
+line-height: 1.5rem;
+padding: 10px 0;
+
+  }
+
+  &__user-duration {
+    display: flex;
+    position: absolute;
+  bottom: 0;
+    span {
+      font-size: 14px;
+      padding: 0 .9rem;
+      &:first-child {
+        border-right: 1px solid gray;
+      }
+
+    }
+  }
+
+
+}
+
+
+
+/* footer */
+footer {
+  background-color: #333;
+  padding: .75rem;
+  color: white;
+  text-align: center;
+  font-size: .75rem;
+}

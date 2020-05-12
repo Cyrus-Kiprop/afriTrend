@@ -1,0 +1,80 @@
+@import '../base/mixin.scss';
+
+
+.section-wrapper{
+  margin: 3rem;
+}
+
+.section-header {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'Balsamiq',sans-serif;
+  line-height: 3rem;
+  color: #9F9723;
+}
+
+.latest-articles {
+  padding:10px;
+  grid-gap:10px;
+
+  @include wide-screen {
+    @include grid(repeat(5, minmax(140px, 1fr)), 250px);
+  }
+
+  @include pc {
+    @include grid(repeat(4, minmax(140px, 1fr)), 250px);
+  }
+
+  @include tab-lg {
+    @include grid(repeat(3, minmax(140px, 1fr)), 250px);
+  }
+
+  @include tab-sm {
+    @include grid(repeat(2 minmax(140px, 1fr)), 250px);
+  }
+
+  @include phone {
+    @include grid(1fr, 250px);
+  }
+
+  &__item {
+    background-color: #191919;
+    color: white;
+    &:hover {
+          text-decoration: underline;
+    color: #9F9723;
+    }
+  }
+
+  &__img {
+    @include fs;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    padding: .8rem;
+    overflow: hidden;
+     display: relative;
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+        font-size: 16px;
+    font-weight: 500;
+    font-family: 'Balsamiq Sans', cursive;
+  }
+  &__votes {
+    color:white;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,30 @@
+<header class="header">
+  <a class="header__logo" href="#">AfriTrend</a>
+  <nav class="header__nav-wrap">
+    <ul class="header__nav-list">
+      <li class="header__nav-item">
+        <%= link_to 'Home', articles_path, class: 'header__nav-link'  %>
+      </li>
+          <% links.each do |link| %>
+            <li class="header__nav-item">
+              <%= link %>
+              </li>
+          <%end%>
+    </ul>
+  </nav>
+  <div class="header__user-wrap">
+    <% if user_signed_in? %>
+      <%= link_to 'Create article <i class="fas fa-plus"></i>'.html_safe, new_article_path, class: "header__user-item btn btn-success" %>
+
+      <span class="header__user-item">|</span>
+      <span class="header__user-item"><%=link_to current_user.first_name + ' ' + current_user.last_name, user_homepage_path(current_user) %></span>
+      <span class="header__user-item">|</span>
+      <span class="header__user-item"> <%= link_to 'sign-out', destroy_user_session_path, method: :delete  %></span>
+    <% else %>
+      <span class="header__user-item"><%= link_to 'Login', new_user_session_path, class: 'user__item_log-out' %></span>
+      <span class="header__user-item">|</span>
+      <span class="header__user-item"><%= link_to 'Register', new_user_registration_path, class: 'user__item_sign-up' %><hspan>
+        <span class="header__user-item"><%= link_to '<i class="fas fa-search"></i>'.html_safe, new_user_registration_path, class: 'user__item_sign-up' %><hspan>
+        <% end %>
+  </div>
+</header>

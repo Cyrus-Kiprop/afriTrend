@@ -1,0 +1,46 @@
+
+
+<main class="wrapper">
+
+    <% if articles.exists?%>
+      <section class="hero">
+  <div class=" hero hero__bg-img " style="background-image: url(<%= rails_blob_path(articles.first.image) %>);">
+    <h1><%= hero_text%></h1>
+
+    <article>
+      <p><%= split_article_content(articles.first.content)%></p>
+      <a href="#">Browse </a>
+    </article>
+  </div>
+  </section>
+<% else%>
+  <section class="d-flex align-items-center justify-content-center" style="height: 80vh;" >
+    <h2 style="font-weight: 1000; font-size: 60px;" >No Result at the moment!</h2>
+  </section>
+<% end %>
+  <section class="category-wrapper">
+
+    <% articles.uniq[0..5].each do |article|%>
+      <div class= "category__item ">
+
+      <div class="latest-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
+      </div>
+
+      <div class="latest-articles__content">
+        <div class="category__item-head">
+          <h1 style='border-bottom: 4px solid  <%= category_name_border_color(article.categories.first.name)%>'><%= article.categories.first.name %></h1>
+        </div>
+        <h2 class="category__item-title"> <%=article.title%></h2>
+        <p class="category__item-desc"> <%=article.content%></p>
+        <%= link_to 'Read More', articles_path(articles), class: 'category__item-read-more'%>
+
+
+      </div>
+
+      </div>
+    </div>
+    <%end%>
+
+  </section>
+  <%= render 'application/more_articles', articles: articles %>
+</main>
