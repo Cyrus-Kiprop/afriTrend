@@ -1,10 +1,10 @@
 <section class="section-wrapper">
   <h2 class="more-articles__header">More from this topic</h2>
   <div class="more-articles">
-    <% if  (articles[9..-1].nil?) %>
+    <% if  (articles.nil?) %>
       <h2 style="font-weight: 1000; font-size: 14px; text-align: center">No Result at the moment!</h2>
     <%else%>
-      <% articles[9..-1].uniq.each do |article|%>
+      <% articles.uniq.each do |article|%>
         <div class="more-articles__item">
           <div class="more-articles__img-wrapper">
           <div class="more-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
