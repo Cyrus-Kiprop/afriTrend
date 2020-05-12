@@ -13,7 +13,7 @@
   <% end %>
 </section>
 <section class="content">
-  <% @articles[0..8].each do |article| %>
+  <% @articles[0..10].each do |article| %>
     <% unless article.categories.empty? %>
       <div class="card content__item" >
         <div class=" content__item-img small-shadow " style="background-image: url(<%= rails_blob_path(article.image) %>);">
@@ -28,5 +28,5 @@
     </div>
   <% end %>
 </section>
-<%= render 'application/latest_articles', data: @articles[8..13] %>
-<%= render 'application/more_articles', articles: @articles[13..-1] %>
+<%= render 'application/latest_articles', data: @articles[10..15] %>
+<%= render 'application/more_articles', articles: @articles[115..-1] %>
