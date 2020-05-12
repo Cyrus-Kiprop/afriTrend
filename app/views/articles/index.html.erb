@@ -1,38 +1,31 @@
 <section class=" container-fluid m-0 p-0">
-
   <%if @top_article %>
-  <div class="row featured m-0 p-0">
-    <div class="col-12 p-0">
-      <div class=" featured__item-img " style="background-image: url(<%= rails_blob_path(@top_article.image) %>);">
-        <%= link_to articles_path(@top_article.id), class: 'featured__gradient' do %>
-          <span class="featured__article-title"><%= @top_article.title %></span>
-          <p class="featured__article-content"><%= @top_article.content%></p>
-        <%end%>
+    <div class="row featured m-0 p-0">
+      <div class="col-12 p-0">
+        <div class=" featured__item-img " style="background-image: url(<%= rails_blob_path(@top_article.image) %>);">
+          <%= link_to articles_path(@top_article.id), class: 'featured__gradient' do %>
+            <span class="featured__article-title"><%= @top_article.title %></span>
+            <p class="featured__article-content"><%= split_article_content(@top_article.content)%></p>
+          <%end%>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
-</section>
-
-<section class="content">
-  <% @articles.each do |article| %>
-
-    <% unless article.categories.empty? %>
-    <div class="card content__item" >
-      <div class=" content__item-img small-shadow " style="background-image: url(<%= rails_blob_path(article.image) %>);">
-
-        <%= link_to article_path(article.id), class: 'content__item-gradient' do%>
-          <div>
-            <span class="content__item-title  " style=" border-bottom:4px solid <%= category_name_border_color(article.categories.first.name)%>"><%=article.categories.first.name  %></span>
-          </div>
-          <p class="content__item-description"><%= article.title%></p>
-        <%end%>
-      <% end %>
-      </div>
-    </div>
-
   <% end %>
 </section>
-
-<%= render 'application/latest_articles', data: @articles %>
+<section class="content">
+  <% @articles[0..8].each do |article| %>
+    <% unless article.categories.empty? %>
+      <div class="card content__item" >
+        <div class=" content__item-img small-shadow " style="background-image: url(<%= rails_blob_path(article.image) %>);">
+          <%= link_to article_path(article.id), class: 'content__item-gradient' do%>
+            <div>
+              <span class="content__item-title  " style=" border-bottom:4px solid <%= category_name_border_color(article.categories.first.name)%>"><%=article.categories.first.name  %></span>
+            </div>
+            <p class="content__item-description"><%= article.title%></p>
+          <%end%>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>
 <%= render 'application/more_articles', articles: @articles %>
