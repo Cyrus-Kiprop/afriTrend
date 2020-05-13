@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
 
   def index
-    @categories = Article.get_category_based_articles(params[:query])
+    @categories = Article.get_category_based_articles(query[:query]).order(created_at: :desc)
   end
 
   def create
@@ -27,6 +27,10 @@ class CategoriesController < ApplicationController
 
   def category_params
     category = params.require(:category).permit(:name, :priority)
+  end
+
+  def query
+    query = params.permit(:query)
   end
 
   def set_catagery

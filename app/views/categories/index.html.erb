@@ -1,11 +1,1 @@
-<h1>Categories#index</h1>
-
-<div>
-  <ul>
-    <% if @categories %>
-      <% @categories.each do |category|%>
-        <li> <%= category.name + ' ' + category.priority%> </li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
+<%=render 'application/list_articles', articles: @categories, hero_text: 'Clothing Trends & Outfit Ideas' %>
