@@ -9,12 +9,11 @@ class CategoriesController < ApplicationController
   def create
     category = Category.new(category_params)
     if category.save
-      redirect_to user_homepage_path
       flash[:notice] = 'Category successfully created'
     else
-      redirect_to user_homepage_path
       flash[:alert] = 'Internal server error'
     end
+    redirect_to user_homepage_path(current_user)
   end
 
   def destroy
@@ -26,11 +25,11 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    category = params.require(:category).permit(:name, :priority)
+    params.require(:category).permit(:name, :priority)
   end
 
   def query
-    query = params.permit(:query)
+    params.permit(:query)
   end
 
   def set_catagery
