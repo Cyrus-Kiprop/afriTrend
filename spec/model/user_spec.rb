@@ -30,7 +30,7 @@ RSpec.describe 'User' do
       user.email = ''
       expect(user.valid?).to be_falsy
     end
-    it "should return true whenever there is an email" do
+    it 'should return true whenever there is an email' do
       user.email = 'example254@gmail.com'
       expect(user.valid?).to be_truthy
     end
@@ -52,13 +52,12 @@ RSpec.describe 'User' do
     end
   end
 
-
   context 'password' do
     it "User's password must exist" do
       user.password = ''
       expect(user.valid?).to be_falsy
     end
-    it "should return true whenever the users a password" do
+    it 'should return true whenever the users a password' do
       user.email = 'example254@gmail.com'
       expect(user.valid?).to be_truthy
     end
@@ -74,6 +73,5 @@ RSpec.describe 'User' do
       user.password = password
       expect(user.valid?).to be_truthy
     end
-
   end
 end
