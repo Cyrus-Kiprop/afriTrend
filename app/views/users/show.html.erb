@@ -18,9 +18,9 @@
   <%unless @categories.empty? %>
     <% @categories.each do |category|%>
       <li>
-      <%= category.name + ' ' + category.priority.to_s%>
+      <%= category.name + ' ' + category.priority.to_s %>
       <%= link_to '<i class="far fa-edit"></i>'.html_safe%>
-      <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category_path, method: :delete %>
+      <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category_path(id: category.id), method: :delete %>
       </li>
     <% end %>
     <div>
