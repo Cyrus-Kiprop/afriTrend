@@ -1,20 +1,21 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import '../base/mixin';
+@import "../base/mixin";
 
 .featured {
   background: #101010;
   height: 80vh;
   width: 100%;
+
   &__item-img {
     height: 100%;
     background-size: cover;
     background-position: center;
     width: 100%;
     transition: width 1s;
-    &:hover{
-      box-shadow: 0px 4px 39px 2px rgba(20,20,20,1);
+    &:hover {
+      box-shadow: 0px 4px 39px 2px rgba(20, 20, 20, 1);
       width: 97%;
       margin: 0 auto;
     }
@@ -29,31 +30,30 @@
 
     opacity: 0.5;
     padding: 20px 20px;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(150,150,150,1) 30%, rgba(138,138,138,1) 100%, rgba(0,0,0,1) 100%);
-    // background-image: linear-gradient(
-    // to right,
-
-    // hsl(344, 100%, 50%),
-    // hsl(31, 100%, 40%)
-
-    // );
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(150, 150, 150, 1) 30%,
+      rgba(138, 138, 138, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+    );
     transition: background-image 0.5s linear;
-
   }
 
   &__article-title {
-    font-size: 100px;
-    font-weight:900;
-    line-height: 112px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 53px;
+    font-weight: 900;
+    line-height: 82px;
+
+    font-family: "Montserrat", sans-serif;
     color: #f81f01;
   }
   &__article-content {
     color: white;
     font-weight: 500;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
@@ -71,19 +71,18 @@
     @include grid(repeat(2, 1fr), 200px);
   }
   @include phone {
-    @include grid( 1fr, 180px);
+    @include grid(1fr, 180px);
   }
 
   &__item {
     border: 0 !important;
-    transition:transform 1s;
+    transition: transform 1s;
 
-    &:hover{
+    &:hover {
       transform: scale(1.1);
       z-index: 5;
       border-radius: 4px;
     }
-
 
     &-img {
       @include fs;
@@ -93,7 +92,6 @@
       &:hover {
         border-radius: 4px;
       }
-
     }
     &-gradient {
       @include fs;
@@ -108,26 +106,23 @@
     &-title {
       font-size: 18px;
       width: auto;
-      display:inline-block;
-      text-decoration:none;
+      display: inline-block;
+      text-decoration: none;
       font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
     }
 
     &-description {
-      font-size:16px;
+      font-size: 16px;
       font-weight: 500;
-      font-family: 'Balsamiq Sans', cursive;
+      font-family: "Balsamiq Sans", cursive;
       &:hover {
         text-decoration: underline;
-        color: #ED5E2C;
+        color: #ed5e2c;
       }
     }
-
-
-
-}}
-
+  }
+}
 
 .article-show-wrapper {
   max-width: 660px;
@@ -135,7 +130,7 @@
   &__article-owner {
     display: flex;
     justify-content: space-between;
-    span{
+    span {
       font-weight: 600;
       font-size: 11px;
       text-transform: capitalize;
@@ -146,27 +141,31 @@
       font-size: 24px;
       font-weight: 1000;
       font-style: italic;
-      font-family: 'Balsamiq';
+      font-family: "Balsamiq";
       text-align: start;
       margin: 0 0 10px 0;
     }
   }
   &__content {
     @include fs;
-    p{
+    p {
       font-size: 1.25rem;
       line-height: 1.875rem;
-    font-family: 'Lato', sans-serif;
-     text-align: justify;
+      font-family: "Lato", sans-serif;
+      text-align: justify;
     }
   }
-  &__article-img{
+  &__article-img {
     width: 100%;
     height: 400px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
 
-    img {
-      @include fs;
-    }
+  }
+
+  &__img {
+    @include fs;
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
 }

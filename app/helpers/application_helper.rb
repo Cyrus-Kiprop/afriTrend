@@ -2,42 +2,17 @@ module ApplicationHelper
   def article_categories
     Category.all.map(&:name)
   end
-  # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
   def links
     result = []
     article_categories.each do |category|
-      if category == 'Fashion'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      elsif category == 'Magazine'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      elsif category == 'Sports'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      elsif category == 'Business'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      elsif category == 'Entertainment'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      elsif category == 'News'
-        result << link_to(category, article_categories_path(category), class: 'header__nav-link')
-      end
+      result << link_to(category, article_categories_path(category), class: 'header__nav-link')
     end
     result
   end
 
   def map_links(category)
-    if category == 'Fashion'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    elsif category == 'Magazine'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    elsif category == 'Sports'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    elsif category == 'Business'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    elsif category == 'Entertainment'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    elsif category == 'News'
-      link_to(category, article_categories_path(category), class: 'more-articles__category')
-    end
+    link_to(category, article_categories_path(category), class: 'more-articles__category')
   end
 
   def upvote_or_downvote_btn(article)
@@ -72,5 +47,4 @@ module ApplicationHelper
       'white'
     end
   end
-  # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 end

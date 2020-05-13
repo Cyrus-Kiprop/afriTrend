@@ -5,8 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @top_article = Article.top_voted_article(1).first
+    @articles = Article.all.order(created_at: :desc)
+    @top_article = Article.top_voted_article(1).first or @articles.first
   end
 
   # GET /articles/1

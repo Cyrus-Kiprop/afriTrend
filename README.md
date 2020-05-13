@@ -8,7 +8,7 @@
 - Ruby on Rails v5.2.4
 
 ## Live Demo
--Click [here](https://agile-mountain-91033.herokuapp.com/users/sign_in) for live demo
+-Click [here](https://afritrend.herokuapp.com/users/sign_up) for live demo
 
 TBA
 
@@ -81,4 +81,4 @@ TBA
 
 ## 📝 License
 
-TBA
+[MIT](https://github.com/Cyrus-Kiprop/afriTrend/raw/master/LICENSE)
