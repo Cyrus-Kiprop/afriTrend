@@ -47,4 +47,16 @@ module ApplicationHelper
       'white'
     end
   end
+
+  def content_empty?(data)
+    data.empty?
+  end
+
+  def content_nil?(data)
+    data.class == NilClass
+  end
+
+  def slice_articles(articles, start, finish)
+    articles[start..finish].uniq
+  end
 end

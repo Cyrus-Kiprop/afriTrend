@@ -1,10 +1,10 @@
 <section class="section-wrapper">
   <h2 class="section-header">Latest Articles</h2>
   <div class="latest-articles">
-    <% if data.class  == NilClass %>
+    <% if content_nil?(data) %>
       <h2 style="font-weight: 1000; font-size: 14px; text-align: center">No Result at the moment!</h2>
     <% else %>
-    <% data[0..9].uniq.each do |article|%>
+    <% slice_articles(data, 0, 9 ).each do |article|%>
       <%= link_to article_path(article), class: "latest-articles__item" do %>
         <%unless article.categories.empty?%>
           <div class="latest-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">

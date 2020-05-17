@@ -20,7 +20,7 @@
 <% end %>
   <section class="category-wrapper">
 
-    <% articles.uniq[0..5].each do |article|%>
+    <% slice_articles(articles, 0, 5).each do |article|%>
       <div class= "category__item ">
 
       <div class="latest-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
@@ -42,5 +42,5 @@
     <%end%>
 
   </section>
-  <%= render 'application/more_articles', articles: articles[7..-1] %>
+  <%= render 'application/more_articles', articles: slice_articles(articles, 7, -1 ) %>
 </main>
