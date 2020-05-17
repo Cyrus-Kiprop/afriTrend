@@ -1,9 +1,8 @@
-[![Contributors][contributors-shield]][https://github.com/cyrus-kiprop/afritrend/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/cyrus-kiprop/afritrend/network/members]
-[![Stargazers][stars-shield]][https://github.com/cyrus-kiprop/afritrend/stargazers]
-[![Issues][issues-shield]][https://github.com/cyrus-kiprop/afritrend/issues]
-[![MIT License][license-shield]][https://github.com/cyrus-kiprop/afritrend/blob/master/license]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/cyrus-kiprop-ba7320120/]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -166,7 +165,6 @@ rails db:migrate
 ```JS
 rails s
 ```
-
 
 ![](./images/starting-server.gif)
 
