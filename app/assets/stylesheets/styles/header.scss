@@ -21,10 +21,11 @@
     height: 70px;
   }
   &__logo {
-    display: inline-block;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     text-decoration: none;
-    color: #000;
     @include phone {
       margin-left: 16px;
       font-size: 18px;
@@ -42,6 +43,11 @@
     }
     @include wide-screen {
       margin-left: 32px;
+    }
+
+    svg {
+      height: 90%;
+      width: 200px;
     }
   }
   &__nav-wrap {
