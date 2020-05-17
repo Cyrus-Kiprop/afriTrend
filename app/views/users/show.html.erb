@@ -14,35 +14,35 @@
         <%if current_user && current_user.admin %>
           <div class d-flex flex-column align-items-center>
             <h3>Categories</h3>
-<ul class="d-flex flex-column m-0 p-0 ">
-  <%unless @categories.empty? %>
-    <% @categories.each do |category|%>
-      <li>
-      <%= category.name + ' ' + category.priority.to_s %>
-      <%= link_to '<i class="far fa-edit"></i>'.html_safe%>
-      <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category_path(id: category.id), method: :delete %>
-      </li>
-    <% end %>
-    <div>
-      <span class="d-block border my-1 "></span>
-  <%= simple_form_for(@category) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <ul class="d-flex flex-column m-0 p-0 ">
+              <%unless @categories.empty? %>
+                <% @categories.each do |category|%>
+                  <li>
+                    <%= category.name + ' ' + category.priority.to_s %>
+                    <%= link_to '<i class="far fa-edit"></i>'.html_safe%>
+                    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category_path(id: category.id), method: :delete %>
+                  </li>
+                <% end %>
+              <% end %>
 
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :priority %>
-    </div>
+              <div>
+                <span class="d-block border my-1 "></span>
+                <%= simple_form_for(@category) do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class=" btn btn-info btn-sm">
-      <%= f.button :submit %>
-    </div>
-  <% end %>
-</div>
+                  <div class="form-inputs">
+                    <%= f.input :name %>
+                    <%= f.input :priority %>
+                  </div>
 
+                  <div class=" btn btn-info btn-sm">
+                    <%= f.button :submit %>
+                  </div>
+                <% end %>
+              </div>
 
-<% end %>
-</ul>
+            </ul>
 
           </div>
         <% end %>
@@ -68,9 +68,9 @@
               <%=link_to 'Read more', article_path(article), class: 'btn btn-success'%>
               <div class="article-show-wrapper-edit-delete">
                 <% if user_signed_in?%>
-                <%= link_to 'Edit', edit_article_path(article) %> |
-                <%= link_to 'Delete', article_path(article), method: :delete %> |
-              <%end%>
+                  <%= link_to 'Edit', edit_article_path(article) %> |
+                  <%= link_to 'Delete', article_path(article), method: :delete %> |
+                <%end%>
                 <%= link_to 'Back', articles_path %>
               </div>
             </div>
