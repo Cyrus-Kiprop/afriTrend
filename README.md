@@ -1,9 +1,8 @@
-
-[![Contributors][contributors-shield]][https://github.com/Cyrus-Kiprop/afriTrend/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/Cyrus-Kiprop/afriTrend/network/members]
-[![Stargazers][stars-shield]][https://github.com/Cyrus-Kiprop/afriTrend/stargazers]
-[![Issues][issues-shield]][https://github.com/Cyrus-Kiprop/afriTrend/issues]
-[![MIT License][license-shield]][https://github.com/Cyrus-Kiprop/afriTrend/blob/master/LICENSE]
+[![Contributors][contributors-shield]][https://github.com/cyrus-kiprop/afritrend/graphs/contributors]
+[![Forks][forks-shield]][https://github.com/cyrus-kiprop/afritrend/network/members]
+[![Stargazers][stars-shield]][https://github.com/cyrus-kiprop/afritrend/stargazers]
+[![Issues][issues-shield]][https://github.com/cyrus-kiprop/afritrend/issues]
+[![MIT License][license-shield]][https://github.com/cyrus-kiprop/afritrend/blob/master/license]
 [![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/cyrus-kiprop-ba7320120/]
 
 <!-- PROJECT LOGO -->
@@ -134,7 +133,7 @@ gem install rails -v 5.2.4
 git clone https://github.com/Cyrus-Kiprop/afriTrend.git
 ```
 
-2. CD into the project roots directory
+2. CD into the project root directory
 
 ```sh
 cd ./afriTrend
@@ -168,6 +167,9 @@ rails db:migrate
 rails s
 ```
 
+
+![](./images/starting-server.gif)
+
 ### Navigate to your browser and open port 3000:
 
 ```JS
@@ -179,6 +181,8 @@ http//localhost:3000
 ![](./images/creating-admin-user.gif)
 
 ### Sign In
+
+![](./images/successful-login.gif)
 
 ### Create Categories (Admin Only)
 
