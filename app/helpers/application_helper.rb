@@ -52,11 +52,19 @@ module ApplicationHelper
     data.empty?
   end
 
+  def content_blank?(object)
+    object.blank?
+  end
+
+  def process_img(article)
+    article.image.attached? ? rails_blob_path(article.image) : ''
+  end
+
   def content_nil?(data)
-    data.class == NilClass
+    data.nil?
   end
 
   def slice_articles(articles, start, finish)
-    articles[start..finish].uniq
+    articles[start..finish]
   end
 end

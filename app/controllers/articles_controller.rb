@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all.order(created_at: :desc)
-    @top_article = Article.top_voted_article(1).first or @articles.first
+    best_article = Article.top_voted_article(1).first
+    @top_article = best_article.nil? ? @articles.first : best_article
   end
 
   # GET /articles/1
