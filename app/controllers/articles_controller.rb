@@ -28,6 +28,9 @@ class ArticlesController < ApplicationController
     cat_id = article_params[:category_ids][1].to_i
     @article = current_user.articles.build(article_params)
 
+    flash.alert = article_params[:image].blank? ? 'Please upload a image' : ''
+    flash[:errors] = article_params[:category].nil? ? 'Select a category' : false
+
     respond_to do |format|
       if @article.save
         @article.categories << Category.find_by_id(cat_id)

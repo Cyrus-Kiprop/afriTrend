@@ -4,10 +4,11 @@
     <% if content_nil?(data) %>
       <h2 style="font-weight: 1000; font-size: 14px; text-align: center">No Result at the moment!</h2>
     <% else %>
-    <% slice_articles(data, 0, 9 ).each do |article|%>
+    <% data.each do |article|%>
       <%= link_to article_path(article), class: "latest-articles__item" do %>
         <%unless article.categories.empty?%>
           <div class="latest-articles__img" style="background-image: url(<%= process_img(article) %>);">
+            <%= image_tag article.image.variant(resize: "100x100") %> ewrr
             <div class="latest-articles__content">
               <div class="category__item-head">
                 <h1 style='border-bottom: 4px solid  <%= category_name_border_color(article.categories.first.name)%>'><%= article.categories.first.name %></h1>
