@@ -13,14 +13,15 @@
   <% end %>
 </section>
 <section class="content">
-  <% slice_articles(@articles, 0, 10)&.each do |article| %>
+  <% slice_articles(@articles, 0, 9)&.each do |article| %>
     <% unless content_nil?(article.categories) %>
       <div class="card content__item" >
         <div class=" content__item-img small-shadow " style="background-image: url(<%= process_img(article)  %>);">
 
           <%= link_to article_path(article.id), class: 'content__item-gradient' do%>
-            <div>
-              <span class="content__item-title  " style=" border-bottom:4px solid <%= category_name_border_color(article.categories.first.name)%>"><%=article.categories.first.name  %></span>
+              <div class="category__item-head">
+                <h1 style='border-bottom: 4px solid  <%= category_name_border_color(article.categories.first.name)%>'><%= article.categories.first.name %></h1>
+                <span class="latest-articles__votes ml-auto"><%= article.votes.count%> <i class="fas fa-vote-yea"></i></span>
             </div>
             <p class="content__item-description"><%= article.title%></p>
           <%end%>
