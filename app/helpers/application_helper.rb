@@ -25,6 +25,8 @@ module ApplicationHelper
   end
 
   def split_article_content(content)
+    return '' if content.nil?
+
     content.slice!(0..content.index('.'))
   end
 
@@ -46,5 +48,27 @@ module ApplicationHelper
     else
       'white'
     end
+  end
+
+  def content_empty?(data)
+    data.empty?
+  end
+
+  def content_blank?(object)
+    object.blank?
+  end
+
+  def process_img(article)
+    return '' if article.nil?
+
+    article.image.attached? ? rails_blob_path(article.image) : ''
+  end
+
+  def content_nil?(data)
+    data.nil?
+  end
+
+  def slice_articles(articles, start, finish)
+    articles[start..finish]
   end
 end

@@ -2,7 +2,7 @@
   <%if @top_article %>
     <div class="row featured m-0 p-0">
       <div class="col-12 p-0">
-        <div class=" featured__item-img " style="background-image: url(<%= rails_blob_path(@top_article.image) %>);">
+      <div class=" featured__item-img " style="background-image: url(<%= process_img(@top_article)%>);">
           <%= link_to articles_path(@top_article.id), class: 'featured__gradient' do %>
             <span class="featured__article-title"><%= @top_article.title %></span>
             <p class="featured__article-content"><%= split_article_content(@top_article.content)%></p>
@@ -13,10 +13,11 @@
   <% end %>
 </section>
 <section class="content">
-  <% @articles[0..10].each do |article| %>
-    <% unless article.categories.empty? %>
+  <% slice_articles(@articles, 0, 10)&.each do |article| %>
+    <% unless content_nil?(article.categories) %>
       <div class="card content__item" >
-        <div class=" content__item-img small-shadow " style="background-image: url(<%= rails_blob_path(article.image) %>);">
+        <div class=" content__item-img small-shadow " style="background-image: url(<%= process_img(article)  %>);">
+
           <%= link_to article_path(article.id), class: 'content__item-gradient' do%>
             <div>
               <span class="content__item-title  " style=" border-bottom:4px solid <%= category_name_border_color(article.categories.first.name)%>"><%=article.categories.first.name  %></span>
@@ -28,5 +29,5 @@
     </div>
   <% end %>
 </section>
-<%= render 'application/latest_articles', data: @articles[10..15] %>
-<%= render 'application/more_articles', articles: @articles[15..-1] %>
+<%= render 'application/latest_articles', data: slice_articles(@articles, 10, 15 ) %>
+<%= render 'application/more_articles', articles: slice_articles(@articles, 15, -1) %>

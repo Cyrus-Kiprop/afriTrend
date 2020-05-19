@@ -4,12 +4,13 @@
     <div class="article-show-wrapper-edit-delete">
       <%if @article.user == current_user%>
         <%= link_to 'Edit', edit_article_path(@article) %> |
-        <%= link_to 'Delete', articles_path(@article), method: :delete %> |
+        <%= link_to 'Delete', article_path(@article), method: :delete %> |
       <%end%>
       <%= link_to 'Back', articles_path %>
 
     </div>
     <span><%= upvote_or_downvote_btn(@article)%></span>
+    <span><%= @article.votes.count%> votes</span>
     <span>Article by:<%= @article.user.first_name + ' ' + @article.user.last_name%></span>
 
   </div>
@@ -30,7 +31,7 @@
     </p>
 
     <div class="article-show-wrapper__article-img">
-      <div class=" article-show-wrapper__img " style="background-image: url(<%= rails_blob_path(@article.image) %>);">
+      <div class=" article-show-wrapper__img " style="background-image: url(<%= process_img(@article) %>); background-color: black;">
       </div>
     </div>
 
