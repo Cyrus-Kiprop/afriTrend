@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.all_articles
     best_article = Article.top_voted_article(1).first
     @top_article = best_article.nil? ? @articles.first : best_article
   end
@@ -29,7 +29,6 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
 
     flash.alert = article_params[:image].blank? ? 'Please upload a image' : ''
-    flash[:errors] = article_params[:category].nil? ? 'Select a category' : false
 
     respond_to do |format|
       if @article.save

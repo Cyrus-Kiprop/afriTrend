@@ -25,6 +25,7 @@ module ApplicationHelper
   end
 
   def split_article_content(content)
+    return '' if content.nil?
     content.slice!(0..content.index('.'))
   end
 
@@ -57,6 +58,7 @@ module ApplicationHelper
   end
 
   def process_img(article)
+return '' if article == nil
     article.image.attached? ? rails_blob_path(article.image) : ''
   end
 
