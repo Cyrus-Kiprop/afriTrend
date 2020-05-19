@@ -1,7 +1,4 @@
-
-
 <main class="wrapper">
-
     <% if articles.exists?%>
       <section class="hero">
   <div class=" hero hero__bg-img " style="background-image: url(<%= process_img(articles.first) %>);">
@@ -20,7 +17,7 @@
 <% end %>
   <section class="category-wrapper">
 
-    <% slice_articles(articles, 0, 5).each do |article|%>
+    <% slice_articles(articles, 0, 5).uniq.each do |article|%>
       <div class= "category__item ">
 
       <div class="latest-articles__img" style="background-image: url(<%= process_img(article) %>);">

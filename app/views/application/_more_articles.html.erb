@@ -11,7 +11,7 @@
           </div>
           </div>
           <div class="more-articles__content">
-            <%= map_links(article.categories.first.name) unless content_empty(article.categories) %>
+            <%= map_links(article.categories.first.name) unless content_empty?(article.categories) %>
             <h3 class="more-articles__title"><%= article.title%></h3>
             <p><%= split_article_content(article.content)%></p>
             <div class="more-articles__user-duration">
