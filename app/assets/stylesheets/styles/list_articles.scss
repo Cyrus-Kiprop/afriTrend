@@ -66,7 +66,7 @@
     }
   }
   &-title {
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Balsamiq", sans-serif;
     font-weight: 600;
   }
@@ -85,15 +85,24 @@
 
   &-read-more {
     color: #df9281;
+    font-weight: 600;
     text-decoration: none;
+      border-bottom: 3px solid white;
     &:hover {
       color: #df9281;
+      text-decoration: none;
+      border-bottom: 3px solid #df9281;
     }
   }
   &-desc {
     font-family: "Bitter", serif;
     text-align: justify;
     overflow: hidden;
+    margin: 0;
+    font-size: 14px;
+    padding-bottom: 2px;
+    word-wrap: break-word;
+    width: 100%;
   }
 }
 
