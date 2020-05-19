@@ -47,7 +47,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![](./images/entire-app.gif)
 
 There are numerous lifestyle websites available on the internet today. This apps helps us plan our daily routine with ease and consume content at the comfort of our houses. I scoured the internet with aim to find lifestyle app that is well tailord based on a specific region, especially africa, however, I coul'nt find one that provided personal content based on regions. I have created and afriTrend inorder to address this shortcoming.
 
@@ -236,3 +236,15 @@ Project Link: [https://github.com/Cyrus-Kiprop/afriTrend](https://github.com/Cyr
 ## License
 
 Distributed under the MIT License. See [ LICENSE ](https://github.com/Cyrus-Kiprop/afriTrend/blob/master/LICENSE) for more information.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Cyrus-Kiprop/afriTrend.svg?style=flat-square
+[contributors-url]: https://github.com/Cyrus-Kiprop/afriTrend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Cyrus-Kiprop/afriTrend.svg?style=flat-square
+[forks-url]: https://github.com/Cyrus-Kiprop/afriTrend/network/members
+[stars-shield]: https://img.shields.io/github/stars/Cyrus-Kiprop/afriTrend.svg?style=flat-square
+[stars-url]: https://github.com/Cyrus-Kiprop/afriTrend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Cyrus-Kiprop/afriTrend.svg?style=flat-square
+[issues-url]: https://github.com/Cyrus-Kiprop/afriTrend/issues
+[product-screenshot]: /app/assets/images/screenshot.png
