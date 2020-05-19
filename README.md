@@ -183,10 +183,10 @@ http//localhost:3000
 ![](./images/successful-login.gif)
 
 ### Create Categories (Admin Only)
+![](./images/creating-categories.gif)
 
 ### Create a new article
-
-### Upvote and Downvote
+![](./images/creating-an-article.gif)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
