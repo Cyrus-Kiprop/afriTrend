@@ -10,7 +10,7 @@
 
     </div>
     <span><%= upvote_or_downvote_btn(@article)%></span>
-    <span><%= @article.votes.count%> votes</span>
+                <span class="latest-articles__votes"><%= @article.votes.count%> <i class="fas fa-vote-yea"></i></span>
     <span>Article by:<%= @article.user.first_name + ' ' + @article.user.last_name%></span>
 
   </div>
