@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    if @article
+    if @category
       @category.destroy
       redirect_to user_homepage_path(current_user)
       flash[:notice] = 'Successfully deleted the category'
