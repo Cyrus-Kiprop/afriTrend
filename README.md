@@ -3,21 +3,15 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/microverse-logo.jpg" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">AFRITREND LIFESTYLE WEB APP</h3>
 
   <p align="center">
     A web App created in the fulfillment of Microverse mandatory Ruby on Rails capstone project.
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://afritrend.herokuapp.com/users/sign_in">View Demo</a>
     ·
@@ -32,6 +26,7 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+  - [Live Demo](#live-demo)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -78,6 +73,10 @@ Fashion
 ```sh
 
 ```
+
+## Live Demo
+
+Click [ here ](https://afritrend.herokuapp.com/users/sign_in) for a live demo of the app.
 
 ### Built With
 
@@ -183,18 +182,18 @@ http//localhost:3000
 ![](./images/successful-login.gif)
 
 ### Create Categories (Admin Only)
+
 ![](./images/creating-categories.gif)
 
 ### Create a new article
-![](./images/creating-an-article.gif)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+![](./images/creating-an-article.gif)
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Cyrus-Kiprop/afriTrend/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -238,7 +237,7 @@ Project Link: [https://github.com/Cyrus-Kiprop/afriTrend](https://github.com/Cyr
 Distributed under the MIT License. See [ LICENSE ](https://github.com/Cyrus-Kiprop/afriTrend/blob/master/LICENSE) for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/Cyrus-Kiprop/afriTrend.svg?style=flat-square
 [contributors-url]: https://github.com/Cyrus-Kiprop/afriTrend/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Cyrus-Kiprop/afriTrend.svg?style=flat-square
