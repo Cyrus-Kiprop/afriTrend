@@ -1,0 +1,83 @@
+<main class="user-wrapper">
+  <aside>
+    <div class="user-details shadow">
+      <div class="user-details__gravatar shadow ">
+      </div>
+      <div class="user-details__info">
+        <span class="user-details__name"><%= @user.first_name + ' ' + @user.last_name %></span>
+        <span>
+          <%= link_to edit_user_registration_path, class: 'user-details__edit-user' do%>
+            <i class="fas fa-cogs"></i> Edit
+          <%end%>
+        </span>
+
+        <%if current_user && current_user.admin %>
+          <div class d-flex flex-column align-items-center>
+            <h3>Categories</h3>
+            <ul class="d-flex flex-column m-0 p-0 ">
+              <%unless @categories.empty? %>
+                <% @categories.each do |category|%>
+                  <li>
+                    <%= category.name + ' ' + category.priority.to_s %>
+                    <%= link_to '<i class="far fa-edit"></i>'.html_safe%>
+                    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, category_path(id: category.id), method: :delete %>
+                  </li>
+                <% end %>
+              <% end %>
+
+              <div>
+                <span class="d-block border my-1 "></span>
+                <%= simple_form_for(@category) do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                  <div class="form-inputs">
+                    <%= f.input :name %>
+                    <%= f.input :priority %>
+                  </div>
+
+                  <div class=" btn btn-info btn-sm">
+                    <%= f.button :submit %>
+                  </div>
+                <% end %>
+              </div>
+
+            </ul>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </aside>
+
+  <section>
+
+    <div class="user-articles">
+      <% if @user.articles.empty? %>
+        <h1>You haven't written any articles lately</h1>
+      <%else%>
+        <% @user.articles.each do |article| %>
+          <div class="user-articles-item">
+
+            <div class="user-articles__img" style="background-image: url(<%= rails_blob_path(article.image) %>);">
+            </div>
+            <div class="description">
+              <h3><%= article.title%></h3>
+              <p><%= split_article_content(article.content) %></p>
+              <%=link_to 'Read more', article_path(article), class: 'btn btn-success'%>
+              <div class="article-show-wrapper-edit-delete">
+                <% if user_signed_in?%>
+                  <%= link_to 'Edit', edit_article_path(article) %> |
+                  <%= link_to 'Delete', article_path(article), method: :delete %> |
+                <%end%>
+                <%= link_to 'Back', articles_path %>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+
+  </section>
+</main>

@@ -1,0 +1,19 @@
+<div class="my-3">
+<%= simple_form_for(@article) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :categories %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :image, as: :file,
+presence: true,
+      input_html: {} %>
+  </div>
+
+  <div class="btn btn-info btn-sm text-light">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

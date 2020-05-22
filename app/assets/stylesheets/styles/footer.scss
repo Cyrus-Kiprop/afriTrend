@@ -1,0 +1,102 @@
+footer {
+  background: #111;
+  color: #fff;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  padding: 48px 0;
+  text-align: center;
+  font-family: "MB Empire",sans-serif;
+
+  .footer-logo {
+    svg {
+      height: 50px;
+      height: 6rem;
+      margin: 10px auto;
+    }
+  }
+
+  .footer-sections  {
+    max-width: 1100px;
+    margin-top: 28px;
+    min-width: 600px;
+    display: flex;
+    margin:0 auto;
+    flex-wrap: wrap;
+
+    &-header {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 400;
+      color: #fff;
+
+      letter-spacing: 0;
+      font-family: Didonesque,serif;
+      margin: 24px 0 16px;
+      &:hover{
+        color: white;
+        text-decoration: none;
+
+      }
+    }
+
+    &-item {
+      flex: 1 1 auto;
+      &:nth-child(2){
+        border-right: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+    }
+  }
+
+  .magazine-wrapper {
+    border: 3px solid #9F9723;
+    width: 288px;
+    margin: 10px auto;
+    height: 240px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .learn-more-links {
+    font-size: .8rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    li {
+      margin: 10px 0;
+      list-style-type: none;
+      margin: 20px 10px 20px 0;
+      font-size: 14px;
+      a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        text-align: start;
+        &:hover {
+          color:#9F9723;
+
+        }
+      }
+    }
+
+    button {
+      font-size: 18px;
+      background-color: #9F9723;
+      color: white;
+      font-weight: 700;
+      margin: 2rem, 0;
+    }
+
+    span {
+      font-size: 16px;
+      margin: 30px 0;
+
+      i {
+        font-size:  16px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
